@@ -1,0 +1,27 @@
+enabled: true
+built_in_css: true
+showon_sidebar: true
+showon_post: true
+show_sideLatest: true
+num_posts: 5
+show_slideLatest: true
+show_slideTitle: true
+slider_title: 'Latest Posts'
+posts_slider: 8
+show_slideCats: true
+show_slideTags: true
+show_readMore: true
+item: 1
+auto: 'true'
+loop: 'true'
+speed: 1000
+pause: 3000
+pauseOnHover: 'true'
+enableControls: 'false'
+enableTouch: 'true'
+enableDrag: 'true'
+scrolltop: true
+top_start: 400
+top_fadeIn: 400
+top_fadeOut: 400
+fontawesome: false

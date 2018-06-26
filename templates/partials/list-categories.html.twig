@@ -1,0 +1,13 @@
+<div class="sidebar-content">
+  <h4>{{ 'XTRASTUFF.CATEGORIES.HEADLINE'|t }}</h4>
+    {% set taxlist = taxonomylist.get() %}
+      {% if taxlist %}
+        {% set category = grav.uri.params("category", true) %}
+          {% for tax,value in taxlist['category'] %}
+            {% set current_page = (tax == category) ? 'active' : '' %}
+              <li class="{{ current_page }} categorieslist">
+                  <a href="{{ base_url }}/blog/category{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax|capitalize }}</a>
+              </li>
+          {% endfor %}
+      {% endif %}
+</div>

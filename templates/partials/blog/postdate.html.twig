@@ -1,0 +1,10 @@
+<span class="xfcard-date">
+    <time class="dt-published" datetime="{{ page.date|date("c") }}">
+        {% if config.plugins.xtrafeatures.fontawesome %}
+          <i class="far fa-calendar"></i>
+        {% else %}
+          <i class="fa fa-calendar"></i>
+        {% endif %}
+          {{ post.date|date(system.pages.dateformat.short) }}
+    </time>
+</span>

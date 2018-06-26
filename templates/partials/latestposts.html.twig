@@ -1,0 +1,8 @@
+{% set settings = {} %}
+{% set settings = config.get('plugins.xtrafeatures')|merge(settings) %}
+  <div class="sidebar-content">
+    <h4>{{ 'XTRASTUFF.LATESTA.HEADLINE'|t }}</h4>
+      {% for post in page.find('/blog').children.order('date', 'desc').slice(0, settings.num_posts|default(5)) %}
+        <li class="latestposts"><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+  </div>

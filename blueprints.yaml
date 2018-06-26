@@ -1,0 +1,299 @@
+name: Xtra Features
+version: 1.0.0
+description: "Adds some extra features to your Grav, such as Latest Post, Categories List, FontAwesome..."
+icon: xing
+author:
+  name: Stellaris Studio (Loky)
+  email: stellaristudio@gmail.com
+  url: https://github.com/StellarisStudio
+homepage: https://github.com/StellarisStudio/grav-plugin-xtrafeatures
+keywords: grav, plugin, category, latest, taxonomy, feature, slider, fontawesome
+bugs: https://github.com/StellarisStudio/grav-plugin-xtrafeatures/issue
+license: MIT
+
+dependencies:
+  - taxonomylist
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    built_in_css:
+      type: toggle
+      label: PLUGINS.XTRAFEATURES.BUILT_IN_CSS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    categories:
+      type: section
+      title: PLUGINS.SECTIONS.CATEGORIES
+      underline: true
+
+    showon_sidebar:
+      type: toggle
+      label: PLUGINS.XTRAFEATURES.SIDEBAR_CATEGORIES_TITLE
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    showon_post:
+      type: toggle
+      label: PLUGINS.XTRAFEATURES.POST_CATEGORIES_TITLE
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    latestposts:
+      type: section
+      title: PLUGINS.SECTIONS.SIDE_LATESTPOSTS
+      underline: true
+
+    show_sideLatest:
+      type: toggle
+      label: PLUGINS.XTRAFEATURES.SHOW_SIDELATEST
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    num_posts:
+      type: text
+      size: x-small
+      label: PLUGINS.XTRAFEATURES.N_LATESTPOST
+      default: 5
+      help: The number of latest posts to show on sidebar
+
+    slider:
+      type: section
+      title: PLUGINS.SECTIONS.SLIDE_LATESTPOSTS
+      underline: true
+
+    show_slideLatest:
+      type: toggle
+      label: PLUGINS.XTRAFEATURES.SHOW_SLIDELATEST
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    show_slideTitle:
+      type: toggle
+      label: PLUGINS.XTRAFEATURES.SHOW_SLIDERTITLE
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    slider_title:
+      type: text
+      size: medium
+      label: PLUGINS.XTRAFEATURES.SLIDERTITLE
+      default: 'Latest Posts'
+
+    posts_slider:
+      type: text
+      size: x-small
+      label: PLUGINS.XTRAFEATURES.N_LATESTPOST
+      default: 8
+      help: The number of latest posts to show on Slider
+
+    show_slideCats:
+      type: toggle
+      label: PLUGINS.XTRAFEATURES.SHOW_SLIDECATS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+      help: Show the post categories on the slider card
+
+    show_slideTags:
+      type: toggle
+      label: PLUGINS.XTRAFEATURES.SHOW_SLIDETAGS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+      help: Show the post tags on the slider card
+
+    show_readMore:
+      type: toggle
+      label: PLUGINS.XTRAFEATURES.SHOW_READMORE
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    item:
+      type: text
+      size: x-small
+      label: Slide
+      default: 1
+      help: The number of slides to show at a time (build in CSS made for 1 item)
+
+    auto:
+      type: toggle
+      label: Auto
+      highlight: true
+      default: 'true'
+      options:
+        'true': PLUGIN_ADMIN.ENABLED
+        'false': PLUGIN_ADMIN.DISABLED
+      help: Sets whether or not automatic transitions is enabled
+
+    loop:
+      type: toggle
+      label: Loop
+      highlight: true
+      default: 'true'
+      options:
+        'true': PLUGIN_ADMIN.ENABLED
+        'false': PLUGIN_ADMIN.DISABLED
+      help: Sets whether or not to loop the slides or stop at the last slide
+
+    speed:
+      type: text
+      size: x-small
+      label: Speed
+      default: 1000
+      help: Sets the time (in milliseconds) of the transition between slides
+
+    pause:
+      type: text
+      size: x-small
+      label: Pause
+      default: 3000
+      help: Sets the time (in milliseconds) between automatic transitions
+
+    pauseOnHover:
+      type: toggle
+      label: Pause on Hover
+      highlight: true
+      default: 'true'
+      options:
+        'true': PLUGIN_ADMIN.ENABLED
+        'false': PLUGIN_ADMIN.DISABLED
+      help: Sets whether or not it should pause the transitions on hover
+
+    enableControls:
+      type: toggle
+      label: Enable Controls
+      highlight: true
+      default: 'true'
+      options:
+        'true': PLUGIN_ADMIN.ENABLED
+        'false': PLUGIN_ADMIN.DISABLED
+      help: Enables prev/next buttons
+
+    enableTouch:
+      type: toggle
+      label: Enable Touch
+      highlight: true
+      default: 'true'
+      options:
+        'true': PLUGIN_ADMIN.ENABLED
+        'false': PLUGIN_ADMIN.DISABLED
+      help: Enables touch support for touch-enabled devices
+
+    enableDrag:
+      type: toggle
+      label: Enable Drag
+      highlight: true
+      default: 'true'
+      options:
+        'true': PLUGIN_ADMIN.ENABLED
+        'false': PLUGIN_ADMIN.DISABLED
+      help: Enables desktop mouse drag support
+
+    gotop:
+      type: section
+      title: PLUGINS.SECTIONS.GOTOP
+      underline: true
+
+    scrolltop:
+      type: toggle
+      label: PLUGINS.XTRAFEATURES.SCROLLTOP
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    top_start:
+      type: text
+      size: x-small
+      label: Start
+      default: 400
+      help: Sets the scroll distance needed before showing the link
+
+    top_fadeIn:
+      type: text
+      size: x-small
+      label: Fade In
+      default: 400
+      help: Sets the duration of the fade in
+
+    top_fadeOut:
+      type: text
+      size: x-small
+      label: Fade Out
+      default: 400
+      help: Sets the duration of the fade out
+
+    divers:
+      type: section
+      title: Divers
+      underline: true
+
+    fontawesome:
+      type: toggle
+      label: PLUGINS.XTRAFEATURES.FONTAWESOME
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool

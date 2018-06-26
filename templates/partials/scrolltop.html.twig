@@ -1,0 +1,24 @@
+{% set settings = {} %}
+{% set settings = config.get('plugins.xtrafeatures')|merge(settings) %}
+<script>
+    $(function(){
+        $('#go-top').click(function(){
+          window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+          return false;
+        });
+        $(window).scroll(function() {
+          if ($(this).scrollTop() > {{ settings.top_start|default(400) }}) {
+            $('#go-top').fadeIn({{ settings.top_fadeIn|default(400) }});
+          } else {
+            $('#go-top').fadeOut({{ settings.top_fadeOut|default(400) }});
+          }
+        });
+    });
+</script>
+<div id="go-top" class="gotop transit">
+    {% if config.plugins.xtrafeatures.fontawesome %}
+      <i class="fas fa-angle-up"></i>
+    {% else %}
+      <i class="fa fa-angle-up"></i>
+    {% endif %}
+</div>

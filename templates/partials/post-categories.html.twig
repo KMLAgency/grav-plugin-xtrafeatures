@@ -1,0 +1,4 @@
+{% set category = grav.uri.params("category", true) %}
+  {% for tax in page.taxonomy.category %}
+    <a href="{{ blog.url|rtrim('/') }}/category{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }}</a>
+  {% endfor %}

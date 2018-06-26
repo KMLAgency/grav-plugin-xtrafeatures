@@ -1,0 +1,76 @@
+{% set settings = {} %}
+{% set settings = config.get('plugins.xtrafeatures')|merge(settings) %}
+    <script type="text/javascript">
+      $(function(){
+        $("#latestSlider").lightSlider({
+          item: {{ settings.item|default(1) }},
+          auto: {{ settings.auto|default('true') }},
+          loop: {{ settings.loop|default('true') }},
+          speed: {{ settings.speed|default(1000) }},
+          pause: {{ settings.pause|default(3000) }},
+          pauseOnHover: {{ settings.pauseOnHover|default('true') }},
+          controls: {{ settings.enableControls|default('false') }},
+          enableTouch: {{ settings.enableTouch|default('true') }},
+          enableDrag: {{ settings.enableDrag|default('true') }},
+        });
+      });
+    </script>
+<div>
+  {% if config.plugins.xtrafeatures.show_slideTitle %}
+    <h2 class="xf-title">{{ settings.slider_title|default('Latest Posts') }}</h2>
+  {% endif %}
+  <ul id="latestSlider">
+    {% for post in page.find('/blog').children.order('date', 'desc').slice(0, settings.posts_slider|default(8)) %}
+    <li>
+      <div class="xfcard">
+        {% set image = post.media.images|first %}
+        {% if image %}
+          <div class="xfcard-image">
+          <a href="{{ post.url }}">{{ image.cropZoom(800,400).html }}</a>
+          </div>
+        {% endif %}
+            <div class="xfcard-content">
+              <div class="xfcard-header">
+                  <div class="card-title">
+                  <h5><a href="{{ post.url }}">{{ post.title }}</a>&nbsp;<span class="xfcard-date">{% include 'partials/blog/postdate.html.twig' %}</span></h5>
+                    {% if config.plugins.xtrafeatures.show_slideCats %}
+                        <span class="xfcard-cat">Posted in
+                        {% set category = grav.uri.params("category", true) %}
+                          {% for tax in post.taxonomy.category %}
+                            <a href="{{ blog.url|rtrim('/') }}/category{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }}</a>
+                        {% endfor %}
+                        </span>
+                    {% endif %}
+                    {% if config.plugins.xtrafeatures.show_slideTags %}
+                        <span class="xfcard-tags">Tags:
+                        {% for tag in post.taxonomy.tag %}
+                          <a class="label label-rounded {{ label_style ?: 'label-secondary' }} p-category" href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}#body-wrapper">{{ tag }}</a>
+                        {% endfor %}
+                        </span>
+                    {% endif %}
+                  </div>
+              </div>
+              <hr />
+              <div class="xfcard-body">
+                  {% if post.summary != post.content %}
+                      {{ post.summary }}
+                  {% else %}
+                      {{ post.content }}
+                  {% endif %}
+              </div>
+              {% if config.plugins.xtrafeatures.show_readMore %}
+                  <a href="{{ post.url }}" class="readmore-btn transit">
+                    {% if config.plugins.xtrafeatures.fontawesome %}
+                      <i class="fas fa-eye"></i>
+                    {% else %}
+                      <i class="fa fa-eye"></i>
+                    {% endif %}
+                      Read More
+                  </a>
+              {% endif %}
+            </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

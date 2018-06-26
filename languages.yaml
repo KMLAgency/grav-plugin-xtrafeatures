@@ -1,0 +1,57 @@
+en:
+  PLUGINS:
+    XTRAFEATURES:
+      PLUGIN_STATUS: Plugin status
+      BUILT_IN_CSS: Use built in CSS
+      SHOW_CATEGORY: Show Categories
+      SIDEBAR_CATEGORIES_TITLE: Show Categories on Sidebar
+      POST_CATEGORIES_TITLE: Show Categories on Post
+      SHOW_SIDELATEST: Show Latest Post
+      N_LATESTPOST: Nb° of Post to show
+      SHOW_SLIDELATEST: Enable Slider
+      SHOW_SLIDERTITLE: Show Slider Title
+      SLIDERTITLE: Slider Title
+      SHOW_SLIDECATS: Show Post Categories
+      SHOW_SLIDETAGS: Show Post Tags
+      SHOW_READMORE: Show "Read more" Button
+      SCROLLTOP: Go Top link
+      FONTAWESOME: Enable FontAwesome 5 (CDN)
+    SECTIONS:
+      CATEGORIES: Categories List
+      SIDE_LATESTPOSTS: Latest Posts Sidebar
+      SLIDE_LATESTPOSTS: Latest Posts Slider
+      GOTOP: Back to Top
+  XTRASTUFF:
+    LATESTA:
+      HEADLINE: Latest Posts
+    CATEGORIES:
+      HEADLINE: Categories
+
+fr:
+  PLUGINS:
+    XTRAFEATURES:
+      PLUGIN_STATUS: Statut du plugin
+      BUILT_IN_CSS: Utiliser le CSS du plugin
+      SHOW_CATEGORY: Montrer les Catégories
+      SIDEBAR_CATEGORIES_TITLE: Montrer les Catégories sur Sidebar
+      POST_CATEGORIES_TITLE: Montrer les Catégories sur Article
+      SHOW_SIDELATEST: Montrer Derniers Articles
+      N_LATESTPOST: Nb° d'Article à montrer
+      SHOW_SLIDELATEST: Activer le Slider
+      SHOW_SLIDERTITLE: Montrer le titre du Slider
+      SLIDERTITLE: Titre du Slider
+      SHOW_SLIDECATS: Montrer les Catégories du post
+      SHOW_SLIDETAGS: Montrer les Tags du post
+      SHOW_READMORE: Montrer le bouton "Lire la suite"
+      SCROLLTOP: Lien "Go Top"
+      FONTAWESOME: Activer FontAwesome 5 (CDN)
+    SECTIONS:
+      CATEGORIES: Liste des Catégories
+      SIDE_LATESTPOSTS: Derniers Articles Sidebar
+      SLIDE_LATESTPOSTS: Derniers Articles Slider
+      GOTOP: Retour en Haut
+  XTRASTUFF:
+    LATESTA:
+      HEADLINE: Derniers Articles
+    CATEGORIES:
+      HEADLINE: Catégories
