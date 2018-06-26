@@ -88,15 +88,15 @@ _(just before `{% block bottom %}`)_
 
 Simply go to the plugin settings from the [Admin Panel](https://github.com/getgrav/grav-plugin-admin).. Or copy the `xtrafeatures.yaml` file into your `user/config/plugins` folder and make your modifications.
 
-`enabled: true` which turns the plugin on/off.<br>
-`built_in_css: true` which activate the default plugin CSS. _(default: true)_
+`enabled:` which turns the plugin on/off. _(default: true)_<br>
+`built_in_css:` which activate the default plugin CSS. _(default: true)_
 
 `showon_sidebar:` Add a categories list on sidebar. _(default: true)_<br>
 `showon_post:` Add categories on post. _(default: true)_<br>
 `show_sideLatest:` Add a list of latest post on sidebar. _(default: true)_<br>
 `num_posts:` Number of post to show on sidebar. _(default: 5)_
 
-`show_slideLatest:` Add a slide of latest post on page. _(default: true)_<br>
+`show_slideLatest:` Add a slider of latest post on page. _(default: true)_<br>
 `show_slideTitle:` Show a title for the slider. _(default: true)_<br>
 `slider_title:` The slider title. _(default: 'Latest Posts')_<br>
 `posts_slider:` Number of post to show on the slider. _(default: 8)_<br>
