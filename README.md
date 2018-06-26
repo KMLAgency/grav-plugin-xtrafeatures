@@ -73,7 +73,8 @@ Come with a _**basic**_ Responsive Design!!<br>
 
 #### Go Top Link
 
-To add the go back to top link, past these lines of code at the bottom of the `base.html.twig` file of your theme: _(just before `{% block bottom %}`)_
+To add the go back to top link, past these lines of code at the bottom of the `base.html.twig` file of your theme:<br>
+_(just before `{% block bottom %}`)_
 ```twig
 {# Back to Top #}
 {% if config.plugins.xtrafeatures.scrolltop %}
